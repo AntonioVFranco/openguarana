@@ -7,3 +7,6 @@ export type { DecisionEvent } from './decisions/events.js'
 
 export { classifyDoraBand, computeLeadTime } from './dashboards/dora.js'
 export type { DoraBand, DoraMetrics } from './dashboards/dora.js'
+
+export { createFundraisingTracker } from './dashboards/fundraising.js'
+export type { Investor, FundraisingTracker } from './dashboards/fundraising.js'
