@@ -31,6 +31,8 @@ export interface Relation {
 export interface GraphStore {
   upsertEntity:    (e: { type: string; name: string; summary: string }) => void
   findEntity:      (name: string) => Entity | undefined
+  findEntityById:  (id: number) => Entity | undefined
+  listAll:         () => Entity[]
   addObservation:  (o: { entityId: number; body: string; source?: string }) => void
   getObservations: (entityId: number) => Observation[]
   addRelation:     (r: { fromId: number; toId: number; type: string; context?: string }) => void
@@ -103,6 +105,14 @@ export function createGraphStore(dbPath: string): GraphStore {
 
     findEntity(name) {
       return db.prepare('SELECT * FROM entities WHERE name = ?').get(name) as Entity | undefined
+    },
+
+    findEntityById(id) {
+      return db.prepare('SELECT * FROM entities WHERE id = ?').get(id) as Entity | undefined
+    },
+
+    listAll() {
+      return db.prepare('SELECT * FROM entities ORDER BY id ASC').all() as Entity[]
     },
 
     addObservation({ entityId, body, source }) {
