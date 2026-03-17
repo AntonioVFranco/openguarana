@@ -1,2 +1,6 @@
 export { hasPermission, assertPermission, ROLE_PERMISSIONS } from './rbac/roles.js'
 export type { Role, Permission } from './rbac/roles.js'
+export { parsePermissionManifest } from './permissions/manifest.js'
+export type { PermissionManifest } from './permissions/manifest.js'
+export { buildNodePermissionFlags, runSkillSandboxed } from './sandbox/runner.js'
+export type { SandboxResult } from './sandbox/runner.js'
