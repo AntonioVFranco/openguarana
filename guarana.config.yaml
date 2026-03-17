@@ -1,0 +1,9 @@
+gateway:
+  port: 18790
+memory:
+  diary: true
+  graph: false
+  extract_entities: true
+professional:
+  enabled: false
+channels: {}
