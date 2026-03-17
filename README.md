@@ -233,6 +233,6 @@ MIT — fork it, modify it, ship it.
 
 ## Contact
 
-Antonio Franco — [contact@antoniovfranco.com](mailto:contact@antoniovfranco.com)
+Antonio V. Franco — [contact@antoniovfranco.com](mailto:contact@antoniovfranco.com)
 
 GitHub: [github.com/AntonioVFranco](https://github.com/AntonioVFranco)
