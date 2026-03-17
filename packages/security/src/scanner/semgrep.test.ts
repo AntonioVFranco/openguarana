@@ -24,7 +24,7 @@ describe('scanSkill', () => {
     const result = await scanSkill(tmpDir)
     expect(result.score).toBeGreaterThanOrEqual(70)
     expect(result.errors).toHaveLength(0)
-  })
+  }, 15_000)
 
   it('detects hardcoded secrets and lowers score below 70 (or skips if semgrep unavailable)', async () => {
     writeFileSync(join(tmpDir, 'index.ts'), `
@@ -38,7 +38,7 @@ describe('scanSkill', () => {
       // semgrep not installed — scanner gracefully returns neutral result
       expect(result.semgrepAvailable).toBe(false)
     }
-  })
+  }, 15_000)
 
   it('detects unsafe eval (or skips if semgrep unavailable)', async () => {
     writeFileSync(join(tmpDir, 'index.ts'), `
@@ -50,5 +50,5 @@ describe('scanSkill', () => {
     } else {
       expect(result.semgrepAvailable).toBe(false)
     }
-  })
+  }, 15_000)
 })

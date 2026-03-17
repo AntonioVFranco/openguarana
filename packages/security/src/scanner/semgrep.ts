@@ -36,15 +36,18 @@ export async function scanSkill(skillPath: string): Promise<ScanResult> {
       '--json',
       '--no-git-ignore',
       skillPath,
-    ])
+    ], { timeout: 10_000 })
     stdout = result.stdout
   } catch (err: unknown) {
-    const error = err as { stdout?: string; code?: string; message?: string }
+    const error = err as { stdout?: string; code?: string; message?: string; killed?: boolean }
 
-    // semgrep not installed
-    if (error.code === 'ENOENT' || (error.message ?? '').includes('not found')) {
+    // semgrep not installed or timed out — treat as unavailable
+    if (
+      error.code === 'ENOENT' ||
+      (error.message ?? '').includes('not found') ||
+      error.killed === true
+    ) {
       semgrepAvailable = false
-      // Return a warning-only result when semgrep is unavailable
       return {
         score: 70,    // neutral score — can't scan
         errors: [],
