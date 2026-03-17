@@ -1,3 +1,3 @@
-// Entry point — exports filled in as packages are implemented
-// Gateway and Config are added in Tasks 3 and 4
+export { loadConfig, loadConfigFromFile } from './config/config.js'
+export type { GuaranaConfig } from './config/schema.js'
 export const VERSION = '0.1.0'
