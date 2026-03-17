@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.js.map
+.env
+.env.*
+!.env.example
+*.db
+*.db-shm
+*.db-wal
+coverage/
+pnpm-lock.yaml
