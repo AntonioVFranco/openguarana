@@ -8,3 +8,6 @@ export { createAuditLog } from './audit/log.js'
 export type { AuditEntry, AuditLog } from './audit/log.js'
 export { scanSkill } from './scanner/semgrep.js'
 export type { ScanFinding, ScanResult } from './scanner/semgrep.js'
+
+export { detectUndeclaredAccess } from './sandbox/behavioral.js'
+export type { AccessLog, AccessViolation } from './sandbox/behavioral.js'
