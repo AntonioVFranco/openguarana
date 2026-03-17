@@ -11,3 +11,6 @@ export type { ScanFinding, ScanResult } from './scanner/semgrep.js'
 
 export { detectUndeclaredAccess } from './sandbox/behavioral.js'
 export type { AccessLog, AccessViolation } from './sandbox/behavioral.js'
+
+export { getSignatureBadge, verifySkillSignature } from './scanner/sigstore.js'
+export type { SignatureBadge, SignatureStatus } from './scanner/sigstore.js'
