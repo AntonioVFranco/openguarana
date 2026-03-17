@@ -10,3 +10,6 @@ export type { DoraBand, DoraMetrics } from './dashboards/dora.js'
 
 export { createFundraisingTracker } from './dashboards/fundraising.js'
 export type { Investor, FundraisingTracker } from './dashboards/fundraising.js'
+
+export { buildInvestorUpdateDraft } from './dashboards/investor-update.js'
+export type { InvestorUpdateInput } from './dashboards/investor-update.js'
