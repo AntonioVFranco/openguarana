@@ -1,0 +1,36 @@
+rules:
+  - id: skill-hardcoded-secret
+    patterns:
+      - pattern: const $KEY = "$VALUE"
+      - metavariable-regex:
+          metavariable: $KEY
+          regex: '(?i)(secret|token|password|api_key|apikey)'
+    message: "Hardcoded secret detected in '$KEY'"
+    severity: ERROR
+    languages: [javascript, typescript]
+
+  - id: skill-unsafe-eval
+    pattern: eval(...)
+    message: "Unsafe eval() usage — code injection risk"
+    severity: ERROR
+    languages: [javascript, typescript]
+
+  - id: skill-exfiltration-risk
+    pattern: "fetch($URL, { body: $USER_DATA, ... })"
+    message: "Network call with user data body — potential exfiltration"
+    severity: WARNING
+    languages: [javascript, typescript]
+
+  - id: skill-child-process-exec
+    patterns:
+      - pattern: child_process.exec(...)
+      - pattern: exec(...)
+    message: "Subprocess exec — requires explicit approval"
+    severity: WARNING
+    languages: [javascript, typescript]
+
+  - id: skill-dynamic-require
+    pattern: require($VAR)
+    message: "Dynamic require with variable — cannot statically audit dependencies"
+    severity: WARNING
+    languages: [javascript]

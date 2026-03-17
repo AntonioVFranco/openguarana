@@ -6,3 +6,5 @@ export { buildNodePermissionFlags, runSkillSandboxed } from './sandbox/runner.js
 export type { SandboxResult } from './sandbox/runner.js'
 export { createAuditLog } from './audit/log.js'
 export type { AuditEntry, AuditLog } from './audit/log.js'
+export { scanSkill } from './scanner/semgrep.js'
+export type { ScanFinding, ScanResult } from './scanner/semgrep.js'
