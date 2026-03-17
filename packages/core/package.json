@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsup src/index.ts --format esm --dts",
+    "build": "tsup src/index.ts --format esm && tsc --emitDeclarationOnly --outDir dist",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },

@@ -13,5 +13,23 @@
   },
   "bin": {
     "guarana": "./dist/index.js"
+  },
+  "scripts": {
+    "dev":       "tsx src/index.ts",
+    "build":     "tsup src/index.ts --format esm",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@openguarana/core":         "workspace:*",
+    "@openguarana/security":     "workspace:*",
+    "@openguarana/professional": "workspace:*",
+    "commander":                 "^12.0.0",
+    "yaml":                      "^2.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup":        "^8.0.0",
+    "tsx":         "^4.0.0",
+    "typescript":  "^5.4.0"
   }
 }
