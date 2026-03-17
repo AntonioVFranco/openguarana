@@ -1,3 +1,5 @@
+export { createGateway }        from './gateway/gateway.js'
 export { loadConfig, loadConfigFromFile } from './config/config.js'
-export type { GuaranaConfig } from './config/schema.js'
+export type { GuaranaConfig }   from './config/schema.js'
+export { logger, childLogger }  from './logger.js'
 export const VERSION = '0.1.0'
