@@ -13,3 +13,6 @@ export type { Investor, FundraisingTracker } from './dashboards/fundraising.js'
 
 export { buildInvestorUpdateDraft } from './dashboards/investor-update.js'
 export type { InvestorUpdateInput } from './dashboards/investor-update.js'
+
+export { deduplicateItems, buildWeeklyDigest, getISOWeek } from './intel/digest.js'
+export type { IntelItem, IntelSource, WeeklyDigest } from './intel/digest.js'
