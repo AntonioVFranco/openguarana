@@ -1,11 +1,3 @@
 {
-  "mcpServers": {
-    "openguarana": {
-      "command": "node",
-      "args": ["packages/mcp/dist/index.js"],
-      "env": {
-        "GUARANA_DB": "/home/antonio/.openguarana/data.db"
-      }
-    }
-  }
+  "enableAllProjectMcpServers": true
 }
